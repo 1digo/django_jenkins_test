@@ -1,5 +1,6 @@
 venv/
 local_settings.py
 __pycache__/
-*.py[cod]
 .idea/
+htmlcov/
+.coverage
