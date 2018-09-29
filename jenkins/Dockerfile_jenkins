@@ -1,0 +1,10 @@
+FROM jenkins/jenkins:2.75-alpine
+
+USER root
+RUN apk add --update\
+   python3 \
+   python3-dev \
+   build-base \
+   py3-pip  \
+   postgresql-dev
+USER jenkins

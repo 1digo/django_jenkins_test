@@ -1,0 +1,19 @@
+version: '2'
+services:
+ postgres:
+   image: "postgres:9.6-alpine"
+   environment:
+     POSTGRES_PASSWORD: admin
+     POSTGRES_USER: admin
+ redis:
+   image: "redis:3.0-alpine"
+ jenkins:
+   build:
+     context: .
+     dockerfile: Dockerfile_jenkins
+   ports:
+     - "9090:8080"
+     - "50000:50000"
+   depends_on:
+     - redis
+     - postgres
